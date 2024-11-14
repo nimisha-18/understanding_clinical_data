@@ -19,15 +19,12 @@ cor_matrix <- cor(lab_vitals, method = "spearman")
 # Prepare the correlation plot
 install.packages("corrplot")
 library(corrplot)
-corrplot(cor_matrix, method = "circle", type = "lower",
+cplot <- corrplot(cor_matrix, method = "circle", type = "lower",
          tl.col = "black", tl.srt = 45,
-         addCoef.col = "black", col = COL2('PiYG'))
+         addCoef.col = "black", col = COL2('RdBu'))
 
 
-# Hypothetical testing
+# Hypothetical testing (can be performed on other vitals)
 ht <- cor.test(cli_data$wbc_first, cli_data$hr_1st, method = "spearman")
-
-
-
 
 
